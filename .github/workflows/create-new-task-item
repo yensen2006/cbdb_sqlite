@@ -1,0 +1,24 @@
+name: Update tasks when latest.7z changes
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'latest.7z'
+jobs:
+  create-item:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get file contents
+        run: echo "latest.7z=$(cat latest.7z)"
+      - name: Create item in task
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.GH_TOKEN}}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "title": "Update tasks when CBDB SQLite updated",
+              "body": "Please update API, Index year, biog_ref, send data dump to ChineseAll, send date to CBDB Line.",
+            }' \
+            https://api.github.com/orgs/cbdb-project/projects/3/items
