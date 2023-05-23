@@ -1,4 +1,4 @@
-name: Update tasks when latest.7z changes
+name: Create new project tasks when latest.7z updated
 on:
   push:
     branches:
