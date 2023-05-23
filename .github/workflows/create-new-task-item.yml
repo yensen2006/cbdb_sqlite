@@ -19,6 +19,6 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{
               "title": "Update tasks when CBDB SQLite updated",
-              "body": "Please update API, Index year, biog_ref, send data dump to ChineseAll, send date to CBDB Line.",
+              "body": "Please update API, biog_ref, calculate index year by Access, update index year to API + inputting system, send data dump to ChineseAll, send date to CBDB Line.",
             }' \
             https://api.github.com/orgs/cbdb-project/projects/3/items
