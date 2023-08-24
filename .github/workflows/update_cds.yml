@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'latest.7z'
+  workflow_dispatch: 
 
 jobs:
   workflow_dispatch:
